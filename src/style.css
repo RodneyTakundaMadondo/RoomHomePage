@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "./index.scss";
+
+
+:root {
+    --ff-primary: "League Spartan", sans-serif;
+    --grey-500: hsl(0, 0%, 63%);
+    --grey-800: hsl(0, 0%, 27%);
+    --red-500:red;
+}
+
+@layer components{
+    
+}

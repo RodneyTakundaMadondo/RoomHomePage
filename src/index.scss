@@ -1,0 +1,161 @@
+:root {
+    --ff-primary: "League Spartan", sans-serif;
+    --grey-500: hsl(0, 0%, 63%);
+    --grey-800: hsl(0, 0%, 27%);
+    --red-500: red;
+}
+
+body {
+    font-family: var(--ff-primary)
+}
+
+.header {
+    @apply bg-transparent px-4;
+    overflow: hidden;
+
+    .nav-links {
+        position: fixed;
+        right: 0;
+        display: flex;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+
+}
+
+@media(min-width:1024px) {
+    .header {
+        .nav-links {
+            position: static;
+            transform: translateX(0%);
+        }
+    }
+}
+
+.header.menu-open {
+
+    @apply bg-white px-4;
+
+    #burger-menu {
+        @apply mr-4;
+    }
+
+    .room-logo {
+        @apply hidden;
+    }
+
+    .nav-links {
+        position: static;
+        transform: translateX(0);
+
+    }
+
+
+}
+
+.nav-links {
+    li {
+        @apply font-semibold;
+    }
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+#burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+
+    // THE LINES
+    span,
+    span:before,
+    span:after {
+        background: var(--grey-500);
+        display: block;
+        height: 2px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+    }
+
+    span:before,
+    span:after {
+        content: '';
+    }
+
+    // TOP
+    span:before {
+        left: 0px;
+        top: -10px;
+        width: 27px;
+    }
+
+    // MIDDLE
+    span {
+        right: 0px;
+        top: 13px;
+        width: 27px;
+    }
+
+    // BOTTOM
+    span:after {
+        left: 0px;
+        top: 10px;
+        width: 27px;
+    }
+
+    // ROTATION ON CLICK
+    &.close {
+
+        // TOP
+        span:before {
+            top: 0px;
+            transform: rotate(90deg);
+            width: 27px;
+        }
+
+        // MIDDLE
+        span {
+            transform: rotate(-45deg);
+            top: 13px;
+            width: 27px;
+        }
+
+        // BOTTOM
+        span:after {
+            top: 0px;
+            left: 0;
+            transform: rotate(90deg);
+            opacity: 0;
+            width: 0;
+        }
+    }
+}
+
+.about-dark {
+    background-image: url('/images/image-about-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-light {
+    background-image: url("/images/image-about-light.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
