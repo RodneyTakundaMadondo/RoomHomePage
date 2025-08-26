@@ -1,4 +1,4 @@
-import heroSection from "./heroSection.js";
+
 const burgerMenu = document.getElementById('burger-menu');
 const roomLogo = document.querySelector(".room-logo");
 const navLinks = document.querySelector(".nav-links");
