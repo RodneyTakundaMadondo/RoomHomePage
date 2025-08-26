@@ -103,6 +103,7 @@ function displayContent(currentIndex) {
   mainHeading.textContent = info.title;
   mainDescription.textContent = info.desc
   img.addEventListener('load', () => {
+    console.log("happened?")
     img.classList.remove('opacity-0');
     img.classList.add('opacity-100');
     heroSibling.classList.remove("opacity-0")
