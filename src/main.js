@@ -1,4 +1,5 @@
-import './style.css'
+import './style.css';
+const base = import.meta.env.BASE_URL;
 const burgerMenu = document.getElementById('burger-menu');
 const roomLogo = document.querySelector(".room-logo");
 const navLinks = document.querySelector(".nav-links");
@@ -41,8 +42,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const information = [
   {
-    imageDesktop: "/images/desktop-image-hero-1.jpg",
-    imageMobile: "/images/mobile-image-hero-1.jpg",
+    imageDesktop: `${base}images/desktop-image-hero-1.jpg`,
+    imageMobile: `${base}images/mobile-image-hero-1.jpg`,
     title: "Discover innovative ways to decorate",
     desc: ` We provide unmatched quality, comfort, and style for property
     owners across the country. Our experts combine form and function
@@ -51,8 +52,8 @@ const information = [
     and what you love.`
   },
   {
-    imageDesktop: "/images/desktop-image-hero-2.jpg",
-    imageMobile: "/images/mobile-image-hero-2.jpg",
+    imageDesktop: `${base}images/desktop-image-hero-2.jpg`,
+    imageMobile: `${base}images/mobile-image-hero-2.jpg`,
     title: "We are available all across the globe",
     desc: `With stores all over the world, it's easy for you to find furniture
     for your home or place of business. Locally, we're in most
@@ -61,8 +62,8 @@ const information = [
     contact us today.`
   },
   {
-    imageDesktop: "/images/desktop-image-hero-3.jpg",
-    imageMobile: "/images/mobile-image-hero-3.jpg",
+    imageDesktop: `${base}images/desktop-image-hero-3.jpg`,
+    imageMobile: `${base}images/mobile-image-hero-3.jpg`,
     title: "Manufactured with the best materials",
     desc: `Our modern furniture store provide a high level of quality. Our
     company has invested in advanced technology to ensure that
@@ -80,7 +81,7 @@ nextBtn.addEventListener("mousedown", () => {
     currentIndex = 0;
   }
   displayContent(currentIndex);
-  
+
 })
 
 prevBtn.addEventListener("mousedown", () => {
